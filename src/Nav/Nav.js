@@ -9,7 +9,7 @@ export default function Nav() {
                 Home
             </Link>
             {' '}
-            <Link to='/'>
+            <Link to={`/question/1`}>
                Start Mock Interview
             </Link>
         </nav>

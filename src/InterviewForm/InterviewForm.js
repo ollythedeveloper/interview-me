@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext }from 'react';
 import { Link } from 'react-router-dom';
+import InterviewContext from '../InterviewContext';
 import './InterviewForm.css';
 
 export default function InterviewForm() {
+    // const [questionNumber, setQuestionNumber] = useState(0);
+    const { questionNumber } = useContext(InterviewContext)
+    
     return (
         <div className="InterviewForm">
             <h4>Start a Mock Interview</h4>
@@ -18,7 +22,9 @@ export default function InterviewForm() {
                         <option value="10">10</option>
                     </select>
                 </div>
-                <button type="submit">Start</button>
+                <Link to={`/question/1`}>
+                    <button type="submit">Start</button>
+                </Link>
             </form>
         </div>
     )

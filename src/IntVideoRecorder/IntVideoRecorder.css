@@ -1,0 +1,8 @@
+.recorder {
+    display: block;
+    margin: auto;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    height: 100%;
+}
