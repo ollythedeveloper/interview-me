@@ -5,32 +5,36 @@ import InterviewContext from '../InterviewContext';
 import './QuestionPage.css';
 
 export default function QuestionPage(props) {
-    const { questions=[], questionNumber, nextQuestion } = useContext(InterviewContext)
-    // const [questionNumber, setQuestionNumber] = useState(0);
-    const numberOfQuestions = questions.length
+    const { questions=[] } = useContext(InterviewContext)
+    const [currentQuestion, setCurrentQuestion ] = useState(0);
     const history = useHistory();
-    console.log(questionNumber)
 
     const handleComplete = () => history.push('/results');
 
-    // const updateQuestion = () => {
-    //     setQuestionNumber(questionNumber +1)
-    // }
+    const handleExit = () => history.push('/');
     
-    console.log(questions)
+    const handleSubmitResponse = () => {
+        const nextQuestion = currentQuestion + 1;
+        if (nextQuestion < questions.length){
+            setCurrentQuestion(nextQuestion);
+        } else {
+            history.push('/results')
+        }
+    };
+    
     return (
         <div className="QuestionPage">
             <section className="Qustion">
-                <h2>{questions[questionNumber].question}</h2>
+                <h2>{questions[currentQuestion].question}</h2>
                 <div className="VidRecorder">
                     <RecordView />
                 </div>
                 <div className="Qpage__buttons">
-                    <button type="button">Exit</button>
+                    <button type="button" onClick={handleExit}>Exit</button>
                     {' '}
-                    <button type="button">Skip</button>
+                    <button type="button" onClick={handleSubmitResponse}>Skip</button>
                     {' '}
-                    <button type="button" onClick={nextQuestion}>Submit Response</button>
+                    <button type="button" onClick={handleSubmitResponse}>Submit Response</button>
                     {' '}
                     <button type="button" onClick={handleComplete}>Complete Interview</button>
                 </div>

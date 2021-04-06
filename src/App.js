@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route, useHistory } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Nav from './Nav/Nav';
 import Home from './Home/Home';
 import Footer from './Footer/Footer';
@@ -13,18 +13,8 @@ class App extends Component {
   state = {
     questions: [],
     responses: [],
-    questionNumber: 0,
-    answered: 0,
     error: null,
   };
-
-  
-
-  handleNextQuestion = e => {
-    e.preventDefault()
-    this.setState({
-      questionNumber: this.state.questionNumber+ 1})
-  }
 
   handleAddResponse = response => {
     this.setState({
@@ -43,11 +33,9 @@ class App extends Component {
     const contextValue = {
       questions: this.state.questions,
       responses: this.state.responses,
-      questionNumber: this.state.questionNumber,
       addResponse: this.handleAddResponse,
-      nextQuestion: this.handleNextQuestion,
     }
-    console.log(this.state.questions)
+  
     return (
       <InterviewContext.Provider value={contextValue}>
         <div className="App">
@@ -55,18 +43,11 @@ class App extends Component {
             <Nav />
           </nav>
           <main className="App__main">
-            <Route
-              exact
-              path='/'
-              component={Home}
-            />
-            <Route
-            path='/question/:questionId'
-            component={QuestionPage}
-            />
-            <Route 
-            path='/results'
-            component={Results}/>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route path='/question/:questionId' component={QuestionPage} />
+              <Route path='/results' component={Results} />
+            </Switch>
           </main>
           <footer>
             <Footer />

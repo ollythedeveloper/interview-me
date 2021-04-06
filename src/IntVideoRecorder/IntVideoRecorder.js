@@ -10,7 +10,6 @@ export const RecordView = () => {
         stopRecording,
         mediaBlobUrl,
     } = useReactMediaRecorder({ video: true });
-    // console.log(mediaBlobUrl)
 
     const stoppedRec = () => {
         stopRecording();
@@ -20,9 +19,9 @@ export const RecordView = () => {
     return (
         <div className="recorder">
             <p>{status}</p>
-            <button onClick={startRecording}>Start</button>
+            <button onClick={startRecording}>Start Recording</button>
             {' '}
-            <button onClick={stoppedRec}>Stop</button>
+            <button onClick={stoppedRec}>Stop Recording</button>
             <br />
             <video src={mediaBlobUrl} controls />
         </div>
