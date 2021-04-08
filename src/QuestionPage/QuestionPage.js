@@ -1,40 +1,33 @@
-import React,  { useContext, useState }from 'react';
+import React,  { useContext }from 'react';
 import { useHistory } from 'react-router-dom';
 import {RecordView} from '../IntVideoRecorder/IntVideoRecorder';
 import InterviewContext from '../InterviewContext';
 import './QuestionPage.css';
 
 export default function QuestionPage(props) {
-    const { questions=[] } = useContext(InterviewContext)
-    const [currentQuestion, setCurrentQuestion ] = useState(0);
+    const { questions=[], nextQuestion, currentQuestion } = useContext(InterviewContext)
+
     const history = useHistory();
 
     const handleComplete = () => history.push('/results');
 
     const handleExit = () => history.push('/');
-    
-    const handleSubmitResponse = () => {
-        const nextQuestion = currentQuestion + 1;
-        if (nextQuestion < questions.length){
-            setCurrentQuestion(nextQuestion);
-        } else {
-            history.push('/results')
-        }
-    };
+
+    const curQuestion = questions[currentQuestion];
     
     return (
         <div className="QuestionPage">
             <section className="Qustion">
-                <h2>{questions[currentQuestion].question}</h2>
+                <h2>{curQuestion.question}</h2>
                 <div className="VidRecorder">
-                    <RecordView />
+                    <RecordView curQuestion={curQuestion}/>
                 </div>
                 <div className="Qpage__buttons">
                     <button type="button" onClick={handleExit}>Exit</button>
                     {' '}
-                    <button type="button" onClick={handleSubmitResponse}>Skip</button>
+                    <button type="button">Skip</button>
                     {' '}
-                    <button type="button" onClick={handleSubmitResponse}>Submit Response</button>
+                    <button type="button" onClick={nextQuestion}>Submit Response</button>
                     {' '}
                     <button type="button" onClick={handleComplete}>Complete Interview</button>
                 </div>

@@ -2,7 +2,8 @@ import React from 'react';
 import { useReactMediaRecorder } from 'react-media-recorder';
 import './IntVideoRecorder.css';
 
-export const RecordView = () => {
+export const RecordView = (props) => {
+    const curQuestion = props.curQuestion;
 
     const {
         status,
@@ -14,16 +15,17 @@ export const RecordView = () => {
     const stoppedRec = () => {
         stopRecording();
         console.log(mediaBlobUrl);
+        console.log(curQuestion);
     }
 
     return (
         <div className="recorder">
-            <p>{status}</p>
-            <button onClick={startRecording}>Start Recording</button>
+             <button onClick={startRecording}>Start Recording</button>
             {' '}
             <button onClick={stoppedRec}>Stop Recording</button>
+            <h3>{status}</h3>
             <br />
-            <video src={mediaBlobUrl} controls />
+            <video className="hidden" src={mediaBlobUrl} controls />
         </div>
     );
 };

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './InterviewForm.css';
 
 export default function InterviewForm() {
-    
     return (
         <div className="InterviewForm">
             <h4>Start a Mock Interview</h4>
@@ -19,7 +18,7 @@ export default function InterviewForm() {
                         <option value="10">10</option>
                     </select>
                 </div>
-                <Link to={`/question/qustionId`}>
+                <Link to={`/question/questionId`}>
                     <button type="submit">Start</button>
                 </Link>
             </form>
