@@ -9,7 +9,6 @@ import store from './dummy-store';
 import './App.css';
 import QuestionPage from './QuestionPage/QuestionPage';
 
-
 class App extends Component {
   state = {
     questions: [],
