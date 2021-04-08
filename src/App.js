@@ -9,6 +9,7 @@ import store from './dummy-store';
 import './App.css';
 import QuestionPage from './QuestionPage/QuestionPage';
 
+
 class App extends Component {
   state = {
     questions: [],
@@ -32,7 +33,6 @@ class App extends Component {
     } else {
       this.history.push('/results')
     }
-    console.log(this.state.currentQuestion)
   }
 
   componentDidMount() {
