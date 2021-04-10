@@ -35,7 +35,6 @@ class App extends Component {
         currentQuestion: nextQuestion
       })
     } else {
-      // this.history.push('/results')
       this.directToResults()
     }
   }
@@ -68,11 +67,6 @@ class App extends Component {
               <Route path='/question/:questionId' component={QuestionPage} />
               <Route path='/results' component={Results} />
             </Switch>
-            {/* <video id="player" controls />
-            <a id="download">Download</a>
-            <button id="stop">Stop</button> */}
-            {/* <video src="http://localhost:3000/8c6310a7-8cf9-4025-a102-5c7e840b47e0" /> */}
-
           </main>
           <footer>
             <Footer />
