@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import Nav from './Nav/Nav';
 import Home from './Home/Home';
 import Footer from './Footer/Footer';
@@ -17,6 +17,11 @@ class App extends Component {
     error: null,
   };
 
+  directToResults = () => {
+    const { history } = this.props;
+    if (history) history.push('/results');
+  };
+
   handleAddResponse = response => {
     this.setState({
       responses: [...this.state.responses, response]
@@ -30,7 +35,8 @@ class App extends Component {
         currentQuestion: nextQuestion
       })
     } else {
-      this.history.push('/results')
+      // this.history.push('/results')
+      this.directToResults()
     }
   }
 
@@ -49,45 +55,6 @@ class App extends Component {
       addResponse: this.handleAddResponse,
       nextQuestion: this.handleNextQuestion,
     }
-
-    // let shouldStop = false;
-    // let stopped = false;
-    // const downloadLink = document.getElementById('download');
-    // const stopButton = document.getElementById('stop');
-
-    // stopButton.addEventListener('click', function() {
-    //   shouldStop = true;
-    // }) 
-
-    // var player = document.getElementById('player');
-
-    // var handleSuccess = function(stream) {
-    //   const options = {mimeType: 'video/webm'};
-    //   const recordedChunks = [];
-    //   const mediaRecorder = new MediaRecorder(stream, options);
-
-    //   mediaRecorder.addEventListener('dataavailable', function(e) {
-    //     if (e.data.size > 0) {
-    //       recordedChunks.push(e.data);
-    //     }
-
-    //     if(shouldStop === true && stopped === false) {
-    //       mediaRecorder.stop();
-    //       stopped = true;
-    //     }
-    //   });
-
-    //   mediaRecorder.addEventListener('stop', function() {
-    //     downloadLink.href = URL.createObjectURL(new Blob(recordedChunks));
-    //     downloadLink.download = 'acetest.webm';
-    //   });
-
-    //   mediaRecorder.start();
-    // };
-
-    // navigator.mediaDevices.getUserMedia({ audio: true, video: true })
-    //   .then(handleSuccess)
-
 
     return (
       <InterviewContext.Provider value={contextValue}>
@@ -115,4 +82,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default withRouter(App);

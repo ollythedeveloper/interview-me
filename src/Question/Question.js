@@ -8,6 +8,7 @@ export default class Question extends React.Component {
             <div className="Question" key={id}>
                 <h2>{question}</h2>
                 <div className="Video__response">
+                    <p>{response.video}</p>
                     <video src={response} />
                 </div>
                 <p>{guidance}</p>

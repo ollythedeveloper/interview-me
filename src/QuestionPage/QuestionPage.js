@@ -9,7 +9,7 @@ export default function QuestionPage(props) {
 
     const history = useHistory();
 
-    const handleComplete = () => history.push('/results');
+    // const handleComplete = () => history.push('/results');
 
     const handleExit = () => history.push('/');
 
@@ -28,8 +28,8 @@ export default function QuestionPage(props) {
                     <button type="button">Skip</button>
                     {' '}
                     <button type="button" onClick={nextQuestion}>Submit Response</button>
-                    {' '}
-                    <button type="button" onClick={handleComplete}>Complete Interview</button>
+                    {/* {' '}
+                    <button type="button" onClick={handleComplete}>Complete Interview</button> */}
                 </div>
             </section>
 
