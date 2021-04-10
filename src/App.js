@@ -29,6 +29,10 @@ class App extends Component {
   }
 
   handleNextQuestion = () => {
+    const number = this.state.questions.length;
+    const randomNumber = Math.random() * number;
+    const wholeRandomNumber = Math.floor(randomNumber);
+    console.log(wholeRandomNumber);
     const nextQuestion = this.state.currentQuestion + 1;
     if (nextQuestion < this.state.questions.length) {
       this.setState({
@@ -40,10 +44,16 @@ class App extends Component {
   }
 
   componentDidMount() {
+    let randomQuestions = [];
+    let questions = store.questions
+    while(questions.length !== 0) {
+      let randomIndex = Math.floor(Math.random() * questions.length);
+      randomQuestions.push(questions[randomIndex]);
+      questions.splice(randomIndex, 1);
+    }
     this.setState({
-      questions: store.questions
+      questions: randomQuestions
     })
-
   }
 
   render() {
