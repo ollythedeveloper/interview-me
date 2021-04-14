@@ -5,16 +5,17 @@ import './IntVideoRecorder.css';
 
 export const RecordView = (props) => {
     const curQuestion = props.curQuestion;
-    // const { questions=[], currentQuestion } = useContext(InterviewContext)
 
     const {
         status,
         startRecording,
         stopRecording,
+        pauseRecording,
         mediaBlobUrl,
     } = useReactMediaRecorder({ video: true });
 
     const stoppedRec = async () => {
+        pauseRecording();
         stopRecording();
         const audioBlob = await fetch(mediaBlobUrl).then(r => r.blob());
 
@@ -22,10 +23,8 @@ export const RecordView = (props) => {
             new Blob([audioBlob]))
 
         let audioFile = url;
-        curQuestion.response = audioFile
+        curQuestion.response = audioFile;
         console.log(curQuestion)
-        // questions[currentQuestion].response = audioFile
-        // console.log(questions[currentQuestion])
     }
 
 
