@@ -5,7 +5,7 @@ import InterviewContext from '../InterviewContext';
 import './QuestionPage.css';
 
 export default function QuestionPage(props) {
-    const { questions=[], nextQuestion, currentQuestion } = useContext(InterviewContext)
+    const { questions=[], currentQuestion } = useContext(InterviewContext)
 
     const history = useHistory();
 
@@ -24,8 +24,8 @@ export default function QuestionPage(props) {
                     <button type="button" onClick={handleExit}>Exit</button>
                     {' '}
                     <button type="button">Skip</button>
-                    {' '}
-                    <button type="button" onClick={nextQuestion}>Submit Response</button>
+                    {/* {' '}
+                    <button type="button" onClick={nextQuestion}>Submit Response</button> */}
                 </div>
             </section>
 

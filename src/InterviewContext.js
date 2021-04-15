@@ -4,6 +4,8 @@ const InterviewContext = React.createContext({
     questions: [],
     responses: [],
     currentQuestion: Number,
+    numberOfQuestions: Number,
+    selectedNum: () => {},
     addResponse: () => {},
     nextQuestion: () => {}
 })

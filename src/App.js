@@ -13,6 +13,7 @@ class App extends Component {
   state = {
     questions: [],
     responses: [],
+    numberOfQuestions: 5,
     currentQuestion: 0,
     error: null,
   };
@@ -28,6 +29,13 @@ class App extends Component {
     })
   }
 
+  handleSelectedNum = (quantity) => {
+    this.setState({
+      numberOfQuestions: quantity
+    })
+    
+  }
+
   handleNextQuestion = () => {
     const nextQuestion = this.state.currentQuestion + 1;
     if (nextQuestion < this.state.questions.length) {
@@ -41,14 +49,15 @@ class App extends Component {
 
   componentDidMount() {
     let randomQuestions = [];
-    let questions = store.questions
+    let questions = store.questions;
+    let numberOfQuestions = this.state.numberOfQuestions;
     while(questions.length !== 0) {
       let randomIndex = Math.floor(Math.random() * questions.length);
       randomQuestions.push(questions[randomIndex]);
       questions.splice(randomIndex, 1);
     }
     this.setState({
-      questions: randomQuestions
+      questions: randomQuestions.slice(0, numberOfQuestions)
     })
   }
 
@@ -57,6 +66,8 @@ class App extends Component {
       questions: this.state.questions,
       responses: this.state.responses,
       currentQuestion: this.state.currentQuestion,
+      numberOfQuestions: this.state.numberOfQuestions,
+      selectedNum: this.handleSelectedNum,
       addResponse: this.handleAddResponse,
       nextQuestion: this.handleNextQuestion,
     }
