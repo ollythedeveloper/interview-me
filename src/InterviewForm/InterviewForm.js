@@ -4,14 +4,13 @@ import InterviewContext from '../InterviewContext';
 import './InterviewForm.css';
 
 export default function InterviewForm() {
-    const { numberOfQuestions, selectedNum, submitForm } = useContext(InterviewContext)
+    const { selectedNum, submitForm } = useContext(InterviewContext)
     const history = useHistory();
 
     const handleSubmit = e => {
         e.preventDefault();
-        selectedNum(e.target.value);
         submitForm();
-        // history.push('/question/questionId')
+        history.push('/interview')
     }
 
     const handleChange = e => {
@@ -21,7 +20,6 @@ export default function InterviewForm() {
     return (
         <div className="InterviewForm">
             <h4>Start a Mock Interview</h4>
-            <p>{numberOfQuestions}</p>
             <form className="Request__form" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="questions">

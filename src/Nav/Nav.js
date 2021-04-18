@@ -9,9 +9,9 @@ export default function Nav() {
                 Home
             </Link>
             {' '}
-            <Link to={`/question/questionId`}>
+            {/* <Link to={`/interview`}>
                Start Mock Interview
-            </Link>
+            </Link> */}
         </nav>
     )
 }

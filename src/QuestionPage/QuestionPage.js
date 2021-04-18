@@ -24,8 +24,6 @@ export default function QuestionPage(props) {
                     <button type="button" onClick={handleExit}>Exit</button>
                     {' '}
                     <button type="button">Skip</button>
-                    {/* {' '}
-                    <button type="button" onClick={nextQuestion}>Submit Response</button> */}
                 </div>
             </section>
 

@@ -18,6 +18,12 @@ class App extends Component {
     error: null,
   };
 
+  resetQuestPlacement = () => {
+    this.setState({
+      currentQuestion: 0
+    })
+  }
+
   setAllQuestions = allQuestions => {
     this.setState({
       allQuestions,
@@ -38,7 +44,7 @@ class App extends Component {
 
   directToQuestions = () => {
     const { history } = this.props;
-    history.push('/questions/questionId');
+    history.push('/interview');
   }
 
 
@@ -78,23 +84,32 @@ class App extends Component {
   }
 
   handleSubmitForm = () => {
-    const allQuestions = this.state.allQuestions;
     const numberOfQuestions = this.state.numberOfQuestions;
-    console.log(allQuestions, numberOfQuestions)
-    let randomQuestions = [];
-    while(allQuestions.length !== 0) {
-      let randomIndex = Math.floor(Math.random() * allQuestions.length);
-      randomQuestions.push(allQuestions[randomIndex]);
-      allQuestions.splice(randomIndex, 1);
-    };
+    const allQuestions = this.state.allQuestions;
+    var m = allQuestions.length, t, i;
+    while (m) {
+      i = Math.floor(Math.random() * m--);
+
+      t = allQuestions[m];
+      allQuestions[m] = allQuestions[i];
+      allQuestions[i] = t;
+    }
     this.setState({
-      questions: randomQuestions.slice(0, numberOfQuestions)
+      questions: allQuestions.slice(0, numberOfQuestions)
     })
-    console.log(this.state.questions)
+    // const numberOfQuestions = this.state.numberOfQuestions;
+    // console.log(allQuestions, numberOfQuestions)
+    // let randomQuestions = [];
+    // while(allQuestions.length !== 0) {
+    //   let randomIndex = Math.floor(Math.random() * allQuestions.length);
+    //   randomQuestions.push(allQuestions.splice(randomIndex, 1)[0]);
+    // };
+    // this.setState({
+    //   questions: randomQuestions.slice(0, numberOfQuestions)
+    // })
   }
 
   render() {
-    console.log(this.state.allQuestions)
     const contextValue = {
       allQuestions: this.state.allQuestions,
       questions: this.state.questions,
@@ -105,7 +120,6 @@ class App extends Component {
       submitForm: this.handleSubmitForm
     }
 
-
     return (
       <InterviewContext.Provider value={contextValue}>
         <div className="App">
@@ -115,7 +129,7 @@ class App extends Component {
           <main className="App__main">
             <Switch>
               <Route exact path='/' component={Home} />
-              <Route path='/question/:questionId' component={QuestionPage} />
+              <Route path='/interview' component={QuestionPage} />
               <Route path='/results' component={Results} />
             </Switch>
           </main>
