@@ -1,13 +1,14 @@
 import React from 'react';
 
 const InterviewContext = React.createContext({
+    allQuestions: [],
     questions: [],
-    responses: [],
     currentQuestion: Number,
     numberOfQuestions: Number,
     selectedNum: () => {},
     addResponse: () => {},
-    nextQuestion: () => {}
+    nextQuestion: () => {},
+    submitForm: () => {}
 })
 
 export default InterviewContext
