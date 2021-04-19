@@ -18,10 +18,10 @@ export default function Home() {
             </section>
             <section>
                 <header>
-                    <h4>Receive Inteview Questions</h4>
+                    <h4>Receive Interview Questions</h4>
                 </header>
                 <p>[<em>placeholder for screenshot of interview prompt</em>]</p>
-                <p>You will receive the number of interview questions of your chosing.
+                <p>You will receive the number of interview questions of your choosing.
                 After receiving a question you will be able to video record your response.
                     </p>
             </section>
