@@ -5,11 +5,14 @@ import InterviewContext from '../InterviewContext';
 import './QuestionPage.css';
 
 export default function QuestionPage(props) {
-    const { questions=[], currentQuestion } = useContext(InterviewContext)
+    const { questions=[], currentQuestion, resetQuestPlacement, nextQuestion } = useContext(InterviewContext)
 
     const history = useHistory();
 
-    const handleExit = () => history.push('/');
+    const handleExit = () => {
+        resetQuestPlacement();
+        history.push('/')
+    };
 
     const curQuestion = questions[currentQuestion];
     
@@ -23,7 +26,7 @@ export default function QuestionPage(props) {
                 <div className="Qpage__buttons">
                     <button type="button" onClick={handleExit}>Exit</button>
                     {' '}
-                    <button type="button">Skip</button>
+                    <button type="button" onClick={nextQuestion}>Skip</button>
                 </div>
             </section>
 

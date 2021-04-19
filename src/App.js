@@ -22,6 +22,9 @@ class App extends Component {
     this.setState({
       currentQuestion: 0
     })
+    this.setState({
+      numberOfQuestions: 5
+    })
   }
 
   setAllQuestions = allQuestions => {
@@ -67,7 +70,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(config.API_ENDPOINT, {
+    fetch(config.API_BASE_URL, {
       method: 'GET',
       headers: {
         'content-type': 'application/json'
@@ -97,16 +100,6 @@ class App extends Component {
     this.setState({
       questions: allQuestions.slice(0, numberOfQuestions)
     })
-    // const numberOfQuestions = this.state.numberOfQuestions;
-    // console.log(allQuestions, numberOfQuestions)
-    // let randomQuestions = [];
-    // while(allQuestions.length !== 0) {
-    //   let randomIndex = Math.floor(Math.random() * allQuestions.length);
-    //   randomQuestions.push(allQuestions.splice(randomIndex, 1)[0]);
-    // };
-    // this.setState({
-    //   questions: randomQuestions.slice(0, numberOfQuestions)
-    // })
   }
 
   render() {
@@ -117,8 +110,10 @@ class App extends Component {
       numberOfQuestions: this.state.numberOfQuestions,
       selectedNum: this.handleSelectedNum,
       nextQuestion: this.handleNextQuestion,
-      submitForm: this.handleSubmitForm
+      submitForm: this.handleSubmitForm,
+      resetQuestPlacement: this.resetQuestPlacement,
     }
+    
 
     return (
       <InterviewContext.Provider value={contextValue}>

@@ -4,3 +4,11 @@
 .Results ul li {
     margin-bottom: 45px;
 }
+
+.Results {
+    padding: 20px;
+}
+
+.Instructions {
+    color: darkcyan;
+}

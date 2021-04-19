@@ -8,7 +8,8 @@ const InterviewContext = React.createContext({
     selectedNum: () => {},
     addResponse: () => {},
     nextQuestion: () => {},
-    submitForm: () => {}
+    submitForm: () => {},
+    resetQuestPlacement: () => {}
 })
 
 export default InterviewContext

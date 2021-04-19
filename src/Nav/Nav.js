@@ -1,17 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import InterviewContext from '../InterviewContext';
 import './Nav.css';
 
 export default function Nav() {
+    const { resetQuestPlacement } = useContext(InterviewContext)
+    
     return (
         <nav className='App__nav'>
-            <Link to='/'>
+            <Link to='/' onClick={resetQuestPlacement}>
                 Home
             </Link>
-            {' '}
-            {/* <Link to={`/interview`}>
-               Start Mock Interview
-            </Link> */}
         </nav>
     )
 }

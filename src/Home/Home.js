@@ -30,8 +30,9 @@ export default function Home() {
                     <h4>Record Your Response</h4>
                 </header>
                 <p>[<em>placeholder for screenshot of video-recording</em>]</p>
-                <p>Once you are ready. You will be given up to 5 mins to answer the interview question. 
-                    When finished you can submit your response and move on to the next question.
+                <p>Once you are ready, click the "Start Recording" button to capture your response. 
+                    The Recorder Status will let you know when the recorder is active. 
+                    When you finish your response click the "Stop Recording" button then "Submit Response" to move on to the next question.
                 </p>
             </section>
             <section>

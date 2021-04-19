@@ -6,14 +6,13 @@ import './IntVideoRecorder.css';
 export const RecordView = (props) => {
     const curQuestion = props.curQuestion;
     const { nextQuestion } = useContext(InterviewContext);
-    // const [curStatus, setCurStatus] = useState(status);
 
     const {
         status,
         startRecording,
         stopRecording,
         clearBlobUrl,
-        mediaBlobUrl,
+        mediaBlobUrl
     } = useReactMediaRecorder({ video: true });
 
     const [curStatus, setCurStatus] = useState(status);
@@ -32,7 +31,6 @@ export const RecordView = (props) => {
 
         let audioFile = url;
         curQuestion.response = audioFile;
-        console.log(curQuestion)
         setCurStatus('stopped')
     }
 
@@ -63,7 +61,7 @@ export const RecordView = (props) => {
             <button onClick={stoppedRec}>Stop Recording</button>
             {' '}
             <button onClick={nextQuest}>Submit Response</button>
-            <h3>{status}</h3>
+            <h3 className="recorderStatus">Recorder Status: {status}</h3>
             <br />
             <video className="hidden" src={mediaBlobUrl} controls />
         </div>
