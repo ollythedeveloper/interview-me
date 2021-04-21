@@ -129,7 +129,7 @@ class App extends Component {
             </Switch>
           </main>
           <footer>
-            <Footer />
+            {/* <Footer /> */}
           </footer>
         </div>
       </InterviewContext.Provider>

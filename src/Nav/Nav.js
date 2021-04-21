@@ -9,7 +9,7 @@ export default function Nav() {
     return (
         <nav className='App__nav'>
             <Link to='/' onClick={resetQuestPlacement}>
-                Home
+                <h1>Interview Me.</h1>
             </Link>
         </nav>
     )
