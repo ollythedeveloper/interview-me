@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useReactMediaRecorder } from 'react-media-recorder';
 import InterviewContext from '../InterviewContext';
-
 import './IntVideoRecorder.css';
 
 export const RecordView = (props) => {

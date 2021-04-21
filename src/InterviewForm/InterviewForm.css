@@ -3,9 +3,5 @@
 }
 
 .InterviewForm label, h4 {
-    font-family: 'Merriweather';
-}
-
-.material-icons-outlined { 
-    font-size: 54px; 
+    font-family: 'Merriweather', serif;
 }

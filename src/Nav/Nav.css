@@ -6,8 +6,9 @@
 .App__nav h1 {
     margin-left: 40px;
     padding: 10px;
-    font-family: 'Lobster Two';
+    font-family: 'Lobster Two', cursive;
     font-size: 40px;
+    color: white;
 }
 
 .App__nav a {

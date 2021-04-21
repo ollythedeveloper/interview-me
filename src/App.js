@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import Nav from './Nav/Nav';
 import Home from './Home/Home';
-import Footer from './Footer/Footer';
+// import Footer from './Footer/Footer';
 import Results from './Results/Results';
 import InterviewContext from './InterviewContext';
 import config from './config';
