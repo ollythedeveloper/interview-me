@@ -5,3 +5,7 @@
 section {
     margin: 40px;
 }
+
+.Question__text {
+    font-family: 'Roboto Slab';
+}

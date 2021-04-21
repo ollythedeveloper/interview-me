@@ -19,7 +19,7 @@ export default function QuestionPage(props) {
     return (
         <div className="QuestionPage">
             <section className="Qustion">
-                <h2>{curQuestion.question}</h2>
+                <h2 className="Question__text">{curQuestion.question}</h2>
                 <div className="VidRecorder">
                     <RecordView curQuestion={curQuestion}/>
                 </div>

@@ -1,3 +1,11 @@
 .question:hover{
     cursor: pointer;
 }
+
+.question {
+    font-family: 'Roboto Slab';
+}
+
+.guidance {
+    font-family: 'Merriweather';
+}

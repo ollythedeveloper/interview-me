@@ -5,3 +5,25 @@
 section {
     margin: 40px;
 }
+
+.Home h1 {
+    font-family: 'Lobster Two';
+    font-size: 60px;
+}
+
+.Home h2, h4 {
+    font-family: 'Roboto Slab', serif;
+}
+
+.Home h2 {
+    font-size: 35px;
+}
+
+.Home h4 {
+    font-size: 23px;
+}
+
+.Home p {
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+}

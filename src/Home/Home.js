@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <div className="Home">
             <header>
-                <h1>Interview Me</h1>
+                <h1>Interview Me.</h1>
             </header>
             <section>
                 <header>

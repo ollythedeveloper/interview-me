@@ -28,7 +28,7 @@ export default class Question extends React.Component {
                                     alt={question} 
                                     playsInline
                                     controls />}
-                    <p>{guidance}</p>
+                    <p className="guidance">{guidance}</p>
                 </div> : null}
             </div> 
         )

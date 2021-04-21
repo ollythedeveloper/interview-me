@@ -1,3 +1,11 @@
 .InterviewForm {
     padding-bottom: 40px;
 }
+
+.InterviewForm label, h4 {
+    font-family: 'Merriweather';
+}
+
+.material-icons-outlined { 
+    font-size: 54px; 
+}
