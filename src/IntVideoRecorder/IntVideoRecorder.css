@@ -13,9 +13,10 @@
 
 .recorderStatus {
     font-family: 'Merriweather', serif;
-    color: #15C3D6;
+    color: #00B5B8;
 }
 
 .recorder .material-icons-outlined { 
-    font-size: 54px; 
+    font-size: 80px; 
+    color: #25232F;
 }

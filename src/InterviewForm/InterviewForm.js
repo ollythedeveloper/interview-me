@@ -19,7 +19,8 @@ export default function InterviewForm() {
 
     return (
         <div className="InterviewForm">
-            <h4>Start a Mock Interview</h4>
+            <section className="form_section">
+            <h4 className="start-interview">Start a Mock Interview</h4>
             <form className="Request__form" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="questions">
@@ -35,8 +36,10 @@ export default function InterviewForm() {
                         <option value={10}>10</option>
                     </select>
                 </div>
+                <br/>
                     <button type="submit">Start</button>
             </form>
+            </section>
         </div>
     )
 }

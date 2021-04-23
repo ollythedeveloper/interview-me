@@ -2,15 +2,27 @@
     text-align: center;
 }
 
-section {
-    margin: 40px;
+.Logo {
+    padding: 40px;
 }
 
 .Home h1 {
     font-family: 'Lobster Two', cursive;
     font-size: 60px;
+    color: #00B5B8;
+}
+.Home h2, h4, p {
+    color: #25232e;
+}
+.Home .practice {
+    font-family: 'Merriweather';
+    font-size: 22px;
+    color: #00B5B8
 }
 
+.Home .note {
+    color: #00B5B8;
+}
 .Home h2, h4 {
     font-family: 'Roboto Slab', serif;
 }
@@ -23,7 +35,48 @@ section {
     font-size: 23px;
 }
 
-.Home p {
+.Home p{
     font-family: 'Merriweather', serif;
     font-size: 20px;
+}
+
+.Home section {
+    margin: 0;
+    min-height: 200px;
+    background-color: #EBFFFF;
+    padding: 20px 50px;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+.item {
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+}
+
+.item-double {
+    flex: 2;
+    margin: 5px;
+    padding: 10px;
+}
+
+.item img {
+    width: 100%;
+}
+
+@media all and (min-width: 800px) {
+
+    .Home h1 {
+        font-size: 90px;
+    }
+
+    .group {
+        flex-direction: row;
+    } 
 }

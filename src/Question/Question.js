@@ -12,7 +12,6 @@ export default class Question extends React.Component {
         })
     }
 
-
     render() {
 
         const { id, question, response, guidance } = this.props

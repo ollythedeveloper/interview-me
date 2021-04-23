@@ -1,4 +1,18 @@
 .App__footer {
-    background-color: #15C3D6;
-    padding: 4% 0;
+    background-color: #00B5B8;
+    padding: 1% 0;
+}
+
+.App__footer h3 {
+    color: #FDF7FA;
+    font-family: 'Lobster Two', cursive;
+    text-align: center;
+    font-size: 20px;
+}
+
+.App__footer p {
+    font-family: 'Merriweather', serif;
+    font-size: 12px;
+    text-align: center;
+    color: #FDF7FA;
 }
