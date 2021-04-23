@@ -4,8 +4,22 @@
 
 .question {
     font-family: 'Roboto Slab', serif;
+    text-align: center;
 }
 
 .guidance {
     font-family: 'Merriweather', serif;
+    text-align: center;
+}
+
+@media all and (min-width: 800px) {
+    .question{
+        text-align: left;
+    }
+
+    .guidance {
+        text-align: left;
+    }
+
+
 }
