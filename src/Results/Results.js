@@ -30,7 +30,7 @@ export default function Results() {
                 <div className="group">
                     <div className="item">
                         <h4>So...how did you do?</h4>
-                        <img src={how} />
+                        <img src={how} alt="how" />
                     </div>
                 </div>
 
