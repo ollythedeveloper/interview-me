@@ -2,6 +2,18 @@
     text-align: center;
 }
 
+.disclaimer {
+    margin: 0px;
+    background-color: #25232e;
+    padding: 5px 15px;
+}
+
+.Home .disclaimer p {
+    color: yellow;
+    font-size: 22px;
+    font-family: 'Merriweather', serif;
+}
+
 .Logo {
     padding: 40px;
 }
@@ -15,13 +27,14 @@
     color: #25232e;
 }
 .Home .practice {
-    font-family: 'Merriweather';
+    font-family: 'Merriweather', serif;
     font-size: 22px;
     color: #00B5B8
 }
 
 .Home .note {
     color: #00B5B8;
+    font-size: 22px;
 }
 .Home h2, h4 {
     font-family: 'Roboto Slab', serif;

@@ -20,6 +20,10 @@ export default function Home() {
                 </div>
             </header>
 
+            <div className="disclaimer">
+                <p>* Disclaimer: The Media Recorder used in Interview Me is currently not supported on iOS and Safari.</p>
+            </div>
+
             <section className="Practice">
                 <div className="group">
                     <div className="item">

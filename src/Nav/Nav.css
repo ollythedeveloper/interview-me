@@ -1,6 +1,7 @@
 .App__nav {
     background-color: #00B5B8;
     padding: 0.3% 0;
+    margin-bottom: 0;
 }
 
 .App__nav h1 {
