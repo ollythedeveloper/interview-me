@@ -21,7 +21,7 @@ export default function Home() {
             </header>
 
             <div className="disclaimer">
-                <p>* Disclaimer: The Media Recorder used in Interview Me is currently not supported on iOS and Safari.</p>
+                <p>* Disclaimer: The Media Recorder used in Interview Me is currently not supported on Safari and iOS mobile devices.</p>
             </div>
 
             <section className="Practice">

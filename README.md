@@ -4,7 +4,7 @@ This App helps to prepare Job Seekers(Users) for interviews by prompting them wi
 
 Live App: [Interview Me](https://interview-me.vercel.app/)
 
-API Docs: [Interview Me API](https://github.com/ollythedeveloper/interview-me-api)
+Backend Repo: [Interview Me API](https://github.com/ollythedeveloper/interview-me-api)
 
 Screenshots
 -----------

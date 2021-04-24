@@ -19,6 +19,8 @@ class App extends Component {
   };
 
   resetQuestPlacement = () => {
+    //this function resets the state of the current question and number of questions
+    //this is triggered when the user returns to the home page from the interview or results page
     this.setState({
       currentQuestion: 0
     })
@@ -87,6 +89,8 @@ class App extends Component {
   }
 
   handleSubmitForm = () => {
+    //this function utilizes the Fisher-Yates-Shuffle method to randomize the interview questions.
+    //the number of questions generated come from the Interview Form submission
     const numberOfQuestions = this.state.numberOfQuestions;
     const allQuestions = this.state.allQuestions;
     var m = allQuestions.length, t, i;
