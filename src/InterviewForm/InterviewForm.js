@@ -23,13 +23,14 @@ export default function InterviewForm() {
             <h4 className="start-interview">Start a Mock Interview</h4>
             <form className="Request__form" onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="questions">
+                    <label htmlFor="questionNum">
                         Number of Questions: 
                     </label>
                     {' '}
                     <select 
                         name="questionNum" 
-                        id="questions"
+                        id="questionNum"
+                        aria-label="Number of interview questions"
                         onChange={handleChange}>
                         <option value={5}>5</option>
                         <option value={8}>8</option>
