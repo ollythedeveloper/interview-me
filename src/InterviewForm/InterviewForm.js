@@ -29,7 +29,7 @@ export default function InterviewForm() {
                     {' '}
                     <select 
                         name="questionNum" 
-                        id="questionNum"
+                        id="questions"
                         onChange={handleChange}>
                         <option value={5}>5</option>
                         <option value={8}>8</option>
